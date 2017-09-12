@@ -1,0 +1,41 @@
+h1{
+    text-align: center;
+    font-weight: 200;
+    font-size: 50px;
+    font-family: Verdana;
+    letter-spacing: 4px;
+    text-decoration-style: solid;
+    text-shadow: 1px 1px grey;
+    text-transform: uppercase;
+}
+.todo-container{
+    margin-left: 25%;
+    padding: 5% 20px;
+    width: 50%;
+    background-color: red;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    margin-right: 40px;
+}
+li{
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: 500;
+    padding: 10px;
+    background-color: yellow;
+}
+.todo-submit{
+    margin: 20px 20%;
+    text-align: center;
+}
+input, button{
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    padding: 5px;
+}
