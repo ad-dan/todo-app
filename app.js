@@ -25,7 +25,8 @@ app.get('/',(req,res)=>{
 });
 
 app.post('/submit',urlEncoded,(req,res)=>{
-    const data = todo(req.body).save((err)=>{
+    const name = req.body.task.trim();
+    const data = todo({'task': name}).save((err)=>{
         if(err) throw err;
         console.log(`Added new task: ${req.body.task}`);
     });
@@ -40,6 +41,14 @@ app.get('/api',(req,res)=>{
         });
         res.json(apiData);
     });
+});
+
+app.delete('/delete/:item',(req,res)=>{
+    const item = req.params.item.trim().replace(/-/g,' ');
+    todo.remove({'task': item},(err)=>{
+        if(err) throw err;
+    });
+    console.log(`Received request to delete ${item}`);
 });
 app.listen(3000);
 
