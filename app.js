@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -8,7 +10,7 @@ mongoose.connect('mongodb://app:app@ds133044.mlab.com:33044/todo-app');
 
 const database = mongoose.connection;
 
-database.once('open',()=>console.log(`Connected to database`));
+database.once('open', () => console.log(`Connected to database`));
 
 const todoSchema = mongoose.Schema({
     task: String
@@ -16,37 +18,45 @@ const todoSchema = mongoose.Schema({
 
 const todo = mongoose.model('todo', todoSchema);
 
-const urlEncoded = bodyParser.urlencoded({extended: false});
+const urlEncoded = bodyParser.urlencoded({
+    extended: false
+});
 
 app.use(express.static('.'));
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.sendFile('index.html');
 });
 
-app.post('/submit',urlEncoded,(req,res)=>{
+app.post('/submit', urlEncoded, (req, res) => {
     const name = req.body.task.trim();
-    const data = todo({'task': name}).save((err)=>{
-        if(err) throw err;
+    const data = todo({
+        'task': name
+    }).save((err) => {
+        if (err) throw err;
         console.log(`Added new task: ${req.body.task}`);
     });
     console.log(req.body);
     res.redirect('/');
 });
 
-app.get('/api',(req,res)=>{
-    todo.find({},(err, data)=>{
-        const apiData = data.map(data=>{
-            return {'task':data.task};
+app.get('/api', (req, res) => {
+    todo.find({}, (err, data) => {
+        const apiData = data.map(data => {
+            return {
+                'task': data.task
+            };
         });
         res.json(apiData);
     });
 });
 
-app.delete('/delete/:item',(req,res)=>{
-    const item = req.params.item.trim().replace(/-/g,' ');
-    todo.remove({'task': item},(err)=>{
-        if(err) throw err;
+app.delete('/delete/:item', (req, res) => {
+    const item = req.params.item.trim().replace(/-/g, ' ');
+    todo.remove({
+        'task': item
+    }, (err) => {
+        if (err) throw err;
     });
     console.log(`Received request to delete ${item}`);
 });

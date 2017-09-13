@@ -2,7 +2,7 @@
     Color scheme: https://color.adobe.com/Copy-of-Sunset-Camping-color-theme-9928711/edit/?copy=true
 */
 body{
-    background-color: #2E112D
+    background: linear-gradient(to right, #200122, #6f000f);
 }
 h1{
     text-align: center;
@@ -28,7 +28,7 @@ img{
     margin-left: 25%;
     padding: 5% 20px;
     width: 50%;
-    background-color:#540032;
+    background-color:rgba(0,0,0,0.1);
     border-radius: 20px;
 }
 ul{
