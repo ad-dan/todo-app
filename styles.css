@@ -1,3 +1,9 @@
+/*
+    Color scheme: https://color.adobe.com/Copy-of-Sunset-Camping-color-theme-9928711/edit/?copy=true
+*/
+body{
+    background-color: #2E112D
+}
 h1{
     text-align: center;
     font-weight: 200;
@@ -6,13 +12,24 @@ h1{
     letter-spacing: 4px;
     text-decoration-style: solid;
     text-shadow: 1px 1px grey;
-    text-transform: uppercase;
+    line-height: 0px;
+    width: 50%;
+    margin: 5% auto;
+    color: #C9283E;
+}
+img{
+    width: 50px;
+    height: 50px;
+    display: inline;
+    margin-left: 10px;
+    line-height: -10px;
 }
 .todo-container{
     margin-left: 25%;
     padding: 5% 20px;
     width: 50%;
-    background-color: red;
+    background-color:#540032;
+    border-radius: 20px;
 }
 ul{
     list-style: none;
@@ -22,15 +39,17 @@ ul{
 li{
     border-radius: 10px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 25px;
-    font-family: monospace;
+    font-family: Verdana;
     font-weight: 500;
     padding: 10px;
-    background-color: yellow;
+    color: wheat;
+    background-color: #ED2F4A;
 }
 li:hover{
     text-decoration: line-through;
+    text-decoration-color: #540032;
 }
 .todo-submit{
     margin: 20px 20%;
@@ -41,4 +60,21 @@ input, button{
     font-weight: 100;
     font-size: 30px;
     padding: 5px;
+}
+input{
+    background-color: #820333;
+    width: 60%;
+    color: #F0433A;
+    border-radius: 20px;
+    font-family: arial;
+    font-weight: 700;
+    text-align: center;
+}
+button{
+    background-color: #C9283E;
+    border-radius: 60px;
+    font-weight: 600;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
 }
